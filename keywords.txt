@@ -1,0 +1,41 @@
+
+# Class
+
+Melopero_Cookie_RP2040	        KEYWORD1
+
+# Methods and functions
+
+showMessage	            KEYWORD2
+setRgbColor	            KEYWORD2
+setRgbBackground	    KEYWORD2
+setDirection	        KEYWORD2
+setRepeatedStart	    KEYWORD2
+stopMessage	            KEYWORD2
+clearScreen	            KEYWORD2
+setPixel	            KEYWORD2
+setMatrix	            KEYWORD2
+showPixels	            KEYWORD2
+formatColor	            KEYWORD2
+ledInit	                KEYWORD2
+ledOn	                KEYWORD2
+ledOff	                KEYWORD2
+ledToggle	            KEYWORD2
+buttonsInit	            KEYWORD2
+readButton	            KEYWORD2
+reverseMessage	        KEYWORD2
+
+
+# Constants
+
+WORDS_PER_CHAR          LITERAL1
+CHAR_WIDTH              LITERAL1
+CHAR_HEIGHT             LITERAL1
+WS2812_PIN_BASE         LITERAL1
+COOKIE_DEFAULT_LED_PIN  LITERAL1
+MAX_MESSAGE_LENGTH      LITERAL1
+LED_PIN                 LITERAL1
+BUTTON_A                LITERAL1
+BUTTON_B                LITERAL1
+
+
+
