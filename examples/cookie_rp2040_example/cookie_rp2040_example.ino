@@ -18,12 +18,15 @@ First release March 2023
 #include "Melopero_Cookie_RP2040.hpp"
 
 String message = "HELLO COOKIE";
+unsigned long t;
 
 
 Melopero_Cookie_RP2040 cookie;
 
 //format a 32bit color for use with neopixels starting from RGB + Brightness values. 
 uint32_t color = cookie.formatColor(20,50,40,0.2);
+
+
 
 void setup()
 {
@@ -70,27 +73,42 @@ void setup()
 
     //By default the message is displayed once. 
     //enable the following line to set a repeated message
+    //this option could be useful to set a message on startup and have it run forever
+    //as an alternative, you can check the elapsed time in the loop() and call again showMessage
+    
     //cookie.setRepeatedStart(true);
-
-    cookie.showMessage(message);
     
 
+    //show message takes as arguments a String and, optionally, the scrolling delay in ms. 
+    //If not specified the default scrolling delay is 200ms.
+    cookie.showMessage(message, 150);
+    
+    //take note of time 
+    t = millis();
 
     
 }
+
 
 void loop()
 {
-  //read the value of BUTTON_A (optionally BUTTON_B) and if pressed clear the screen with color
-if(cookie.readButton(BUTTON_A))  cookie.clearScreen(color);
-else cookie.clearScreen(); //else turn off all the pixels
   
+  //Check if enough time has elapsed before calling again showMessage.
+  if((millis()-t) > 10000 )
+  {
+    cookie.showMessage(message, 150);
+    t = millis();
 
-  //toggle the buil-in LED
+  } 
+
+  
   cookie.ledToggle();
   delay(100);
 
+
+
 }
+
 
 
     
