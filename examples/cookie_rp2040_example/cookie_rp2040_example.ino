@@ -93,7 +93,7 @@ void setup()
 void loop()
 {
   
-  //Check if enough time has elapsed before calling again showMessage.
+  //Check the elapsed time before calling again showMessage.
   if((millis()-t) > 10000 )
   {
     cookie.showMessage(message, 150);
